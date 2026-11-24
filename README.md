@@ -1,6 +1,6 @@
 <h1 align="center">Nativ SDK for Swift</h1>
 
-[![Native SDK for Swift: Run AI models on Apple silicon.](https://raw.githubusercontent.com/Neywa-Labs/mlx-vlm/b7fda105064b609fcc2ef243bd628c3dad317564/docs/assets/mlx-vlm-banner.png)](https://runnativ.ai)
+[![Nativ SDK for Swift: Run AI models on Apple silicon.](https://github.com/user-attachments/assets/d5ba486c-23b0-4b51-94bb-3201ffadb0ba)](#installation)
 
 <p align="center">
   <strong>Run AI models on Apple silicon with <a href="https://github.com/ml-explore/mlx-swift">MLX Swift</a>.</strong>
