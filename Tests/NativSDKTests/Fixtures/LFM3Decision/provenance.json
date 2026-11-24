@@ -1,0 +1,9 @@
+{
+  "reference": "mlx-vlm",
+  "revision": "4693cd0eaf022ae7ef61c6fdb55e17e6399879a7",
+  "mlx_version": "0.32.2",
+  "weights": "../LFM3/weights.safetensors",
+  "license": "LFM Open License v1.0",
+  "device": "cpu",
+  "video": "Synthetic CODE 5739 sign, H.264 transcode of the LFM3 integration fixture; contains no user media"
+}

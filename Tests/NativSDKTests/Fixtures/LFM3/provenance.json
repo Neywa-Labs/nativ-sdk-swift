@@ -1,0 +1,10 @@
+{
+  "source": "Blaizzy/mlx-vlm",
+  "method": "float32 deterministic tiny weights; seed 178; fixed MaskGIT order [2,0,1]",
+  "mlx_version": "0.32.4",
+  "reference_commit": "3070dcc31948f48f9d8639b606af7bc019494fac",
+  "production_configs": {
+    "LiquidAI/LFM3-Audio-2B-MLX-4bit": "cf555916a658f9db4baf84120b56b28807b2b53f",
+    "LiquidAI/LFM3-Omni-2B-MLX-4bit": "bf5bdb2845c27ae0126daa2c008f080bd911bfca"
+  }
+}

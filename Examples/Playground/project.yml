@@ -1,0 +1,84 @@
+name: NativSDKPlayground
+options:
+  minimumXcodeGenVersion: 2.40.0
+  deploymentTarget:
+    macOS: "14.0"
+    iOS: "17.0"
+packages:
+  NativSDK:
+    path: ../..
+  MLX:
+    url: https://github.com/ml-explore/mlx-swift
+    exactVersion: 0.33.0
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+targetTemplates:
+  Playground:
+    type: application
+    sources:
+      - Sources
+      - path: Resources
+        buildPhase: resources
+    dependencies:
+      - package: NativSDK
+        product: NativSDK
+      - package: MLX
+        product: MLX
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.nativsdk.examples.playground
+        PRODUCT_NAME: NativSDKPlayground
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: Nativ SDK Playground
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+targets:
+  NativSDKPlayground:
+    templates: [Playground]
+    platform: macOS
+    settings:
+      base:
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.productivity
+        CODE_SIGN_STYLE: Manual
+        CODE_SIGN_IDENTITY: "-"
+        ENABLE_APP_SANDBOX: NO
+        # Ad-hoc local builds cannot satisfy dynamic framework Team ID validation.
+        ENABLE_HARDENED_RUNTIME: NO
+        SUPPORTED_PLATFORMS: macosx
+        ARCHS: arm64
+  NativSDKPlayground-iOS:
+    templates: [Playground]
+    platform: iOS
+    info:
+      path: Info-iOS.plist
+      properties:
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+    settings:
+      base:
+        CODE_SIGN_STYLE: Automatic
+        CODE_SIGN_ENTITLEMENTS: Playground-iOS.entitlements
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SUPPORTS_MACCATALYST: NO
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: NO
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+schemes:
+  NativSDKPlayground:
+    build:
+      targets:
+        NativSDKPlayground: all
+    run:
+      config: Debug
+    archive:
+      config: Release
+  NativSDKPlayground-iOS:
+    build:
+      targets:
+        NativSDKPlayground-iOS: all
+    run:
+      config: Debug
+    archive:
+      config: Release
